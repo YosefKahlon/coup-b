@@ -70,7 +70,7 @@ void Ambassador::transfer( Player &player1,  Player& player2) {
     player1.set_Action(Lost_1_from_transfer);
     player2.set_Action(Received_1_from_transfer);
 
-    this->p_game->index++;
+    this->p_game->end_my_turn();
 
 
 

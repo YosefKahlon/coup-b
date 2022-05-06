@@ -67,7 +67,7 @@ void Duke::tax() {
 
     set_Action(Tax);
     set_coins(3);
-    this->p_game->index++;
+    this->p_game->end_my_turn();
 }
 
 

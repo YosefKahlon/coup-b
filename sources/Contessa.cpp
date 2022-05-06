@@ -46,17 +46,14 @@ void Contessa::block(Player &player) {
 
 
 
-
     // Bring back from the dead
     auto itPos = this->p_game->player.begin() + player.get_player().get_pos();
 
     this->p_game->player.insert(itPos, player.get_player().get_name());
 
 
-
-    //this->p_game->index++;
     this->p_game->size++;
-
+  
 
     player.set_Action(Noting);
 

@@ -24,35 +24,36 @@ using namespace coup;
 using namespace std;
 
 
-int main (){
+int main () {
+    Game game_6{}; // build game . add players
+    Duke duke{game_6, "Moshe"};
+    Assassin assassin{game_6, "Yossi"};
+    Ambassador ambassador{game_6, "Meirav"};
+    Captain captain{game_6, "Reut"};
+    Contessa contessa{game_6, "Gilad"};
 
-    Game game_1{};
-    Assassin assassin{game_1, "Yossi"};
-    Ambassador ambassador{game_1, "Meirav"};
-    Contessa contessa{game_1, "Gilad"};
-    Duke duke = {game_1, "d"};
+    for (int i = 0; i < 9; i++) {
+        duke.income();
+        assassin.income();
+        ambassador.income();
+        captain.income();
+        contessa.income();
+    }
+//    // before transfering coins
+//    CHECK_EQ(duke.coins(),9);
+//    CHECK_EQ(assassin.coins(),9);
+//    CHECK_EQ(ambassador.coins(),9);
+//    CHECK_EQ(captain.coins(),9);
+//    CHECK_EQ(contessa.coins(),9);
 
-   assassin.foreign_aid();
-   ambassador.foreign_aid();
-   contessa.foreign_aid();
-   duke.foreign_aid();
-
-   assassin.foreign_aid();
-   ambassador.foreign_aid();
-   contessa.foreign_aid();
-   duke.foreign_aid();
+    duke.income(); // 10
+    assassin.foreign_aid(); // 11
+    cout<< game_6.index<<endl;
+    ambassador.coup(captain); // 2
+    cout<< game_6.index << endl;
+//    captain.income(); // 10
+//    contessa.coup(captain); // 2
 
 
-   cout << game_1.size << endl;
-   assassin.coup(ambassador);
 
-  // contessa.block(assassin);
-    cout << game_1.turn() << endl;
-   cout << game_1.index << endl;
 }
-
-
-
-
-
-

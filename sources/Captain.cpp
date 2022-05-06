@@ -76,14 +76,14 @@ void Captain::steal(Player &player) {
         player.set_Action(Robbed);
         set_Action(Steal_1);
 
-        this->p_game->index++;
+        this->p_game->end_my_turn();
     } else if (player.coins() >= two) {
         player.set_coins(-2);
         set_coins(2);
         player.set_Action(Robbed);
         set_Action(Steal_2);
 
-        this->p_game->index++;
+        this->p_game->end_my_turn();
     } else {
         throw runtime_error("Player not have enough money to steel !");
     }
