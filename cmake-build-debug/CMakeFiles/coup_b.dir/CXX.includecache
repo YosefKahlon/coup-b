@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Game.hpp
+string
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/string
+vector
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/vector
+unordered_map
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/unordered_map
+
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Player.cpp
+Player.hpp
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Player.hpp
+utility
+-
+
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Player.hpp
+string
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/string
+iostream
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/iostream
+Game.hpp
+/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Game.hpp
+

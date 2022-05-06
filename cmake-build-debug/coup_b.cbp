@@ -87,6 +87,48 @@
 		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/main.cpp">
 			<Option target="coup_b"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Ambassador.cpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Ambassador.hpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Assassin.cpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Assassin.hpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Captain.cpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Captain.hpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Contessa.cpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Contessa.hpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Duke.cpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Duke.hpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Game.cpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Game.hpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Player.cpp">
+			<Option target="coup_b"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/sources/Player.hpp">
+			<Option target="coup_b"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/97252/Documents/GitHub/coup-b/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
