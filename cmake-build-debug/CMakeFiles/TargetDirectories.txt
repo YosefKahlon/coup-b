@@ -1,0 +1,3 @@
+/mnt/c/Users/97252/Documents/GitHub/coup-b/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/97252/Documents/GitHub/coup-b/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/97252/Documents/GitHub/coup-b/cmake-build-debug/CMakeFiles/coup_b.dir
