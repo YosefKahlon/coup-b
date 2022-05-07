@@ -33,6 +33,7 @@ namespace coup {
         std::string winner();
 
 
+        void end_my_turn(bool forward);
     };
 }
 

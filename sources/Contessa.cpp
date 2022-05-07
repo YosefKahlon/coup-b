@@ -54,11 +54,18 @@ void Contessa::block(Player &player) {
 
 
 
-    //this->p_game->index++;
+
     this->p_game->size++;
 
 
-    player.set_Action(Noting);
+    if (find_p(player.get_player().get_name())  < find_p(player.get_name())){
+        this->p_game->end_my_turn(true);
+    }else{
+        this->p_game->end_my_turn(false);
+    }
+
+
+    player.get_player().set_Action(Noting);
 
 
     this->set_Action(Block_cont);

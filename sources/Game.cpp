@@ -39,11 +39,17 @@ std::string coup::Game::winner() {
 }
 
 std::string coup::Game::turn() {
-
-    // if after one cycye thre is cuope this player out;
-    return this->player.at(index % size);
+    return this->player.at(index);
 }
 
+void Game::end_my_turn(bool forward) {
+    if (forward) {
+        this->index = (this->index + 1) % this->size;
+    }
+    else {
+        this->index = this->index % this->size;
+    }
+}
 
 
 

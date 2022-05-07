@@ -43,9 +43,6 @@ void coup::Player::income() {
 
 
 
-
-
-
     if(!this->p_game->min){
         throw invalid_argument("Must 2 player to start the game !");
     }
@@ -66,7 +63,7 @@ void coup::Player::income() {
     if (coins() >= ten) {
         throw runtime_error("Player must make a coup operation when he have more then 10 coins ! ");
     }
-    this->p_game->index++;
+    this->p_game->end_my_turn(true);
     set_coins(1);
     set_Action(Income);
 
@@ -106,7 +103,7 @@ void coup::Player::foreign_aid() {
     }
 
     set_Action(Foreign_aid);
-    this->p_game->index++;
+    this->p_game->end_my_turn(true);
     set_coins(2);
 
 }
@@ -144,13 +141,30 @@ void coup::Player::coup(Player &player) {
         set_player(&(player));
 
 
-        ++this->p_game->index;
+        int posi = find_p(player.get_name());
+
+
+        player.set_pos(posi);
 
         out_from_game(player.get_pos());
 
-        if (p_game->size == 1){
-            p_game->win = true;
+
+        if(find_p(get_name()) < posi) {
+            this->p_game->end_my_turn(true);
+        }else{
+            this->p_game->end_my_turn(false);
         }
+
+
+        if (p_game->size == 1) {
+            p_game->end_my_turn(true);
+            p_game->win = true;
+            return;
+        }
+
+
+
+
         return;
     }
 
@@ -164,15 +178,32 @@ void coup::Player::coup(Player &player) {
 
 
 
-   this->p_game->index++;
+    int posi = find_p(player.get_name());
+   player.set_pos(posi);
+
     out_from_game(player.get_pos());
     set_coins(-seven);
     this->set_Action(Normal_coup);
     player.set_Action(Out);
 
-    if (p_game->size == 1){
-        p_game->win = true;
+
+    if(find_p(get_name()) < posi) {
+        this->p_game->end_my_turn(true);
+
+    }else{
+        this->p_game->end_my_turn(false);
     }
+
+
+
+    if (p_game->size == 1) {
+        p_game->end_my_turn(true);
+        p_game->win = true;
+        return;
+    }
+
+
+
 }
 
 
@@ -209,6 +240,17 @@ int Player::get_pos() const {
 
 void Player::set_pos(int posi) {
     this->pos = posi;
+}
+
+int Player::find_p(string basicString) {
+    int posi = 0;
+    for (::size_t i = 0; i < p_game->size; ++i) {
+        if (p_game->player.at(i) == basicString){
+            posi = i;
+            break;
+        }
+    }
+    return posi;
 }
 
 
