@@ -19,10 +19,9 @@ coup::Player::Player(coup::Game &game, string name) {
     this->money = 0;
     this->player_name = std::move(name);
     this->action = Start;
+
+
 }
-
-
-
 
 /**
  *
@@ -42,6 +41,11 @@ int coup::Player::coins() const {
 void coup::Player::income() {
 
 
+
+
+
+
+
     if(!this->p_game->min){
         throw invalid_argument("Must 2 player to start the game !");
     }
@@ -55,15 +59,17 @@ void coup::Player::income() {
     }
 
 
+
+
     //Throw an exception if this player has more than 10 coins, and he has not made a coup
     const int ten = 10;
     if (coins() >= ten) {
         throw runtime_error("Player must make a coup operation when he have more then 10 coins ! ");
     }
-
+    this->p_game->index++;
     set_coins(1);
     set_Action(Income);
-    this->p_game->end_my_turn();
+
 }
 
 void coup::Player::set_coins(int num) {
@@ -100,8 +106,9 @@ void coup::Player::foreign_aid() {
     }
 
     set_Action(Foreign_aid);
+    this->p_game->index++;
     set_coins(2);
-    this->p_game->end_my_turn();
+
 }
 
 
@@ -114,38 +121,38 @@ void coup::Player::coup(Player &player) {
         throw invalid_argument("Not your turn !");
     }
 
-    //Throw an exception if the player is not  join the game anymore !
     if(player.get_Action() == Out){
         throw invalid_argument("PLAYER IS ALREADY DEAD!");
     }
 
 
+
+
     //Assassin coup - can do when the assassin have more than 3 coins and less than 7
     if (role() == "Assassin" && coins() < seven && coins() >= three) {
+
 
         //set Action
         this->set_Action(Assassination);
         player.set_Action(Out);
 
-        //the operation cost 3 coins
+
+        //set coin
         set_coins(-three);
 
         //remember this player
         set_player(&(player));
 
-        //remove the player from the player list
+
+        ++this->p_game->index;
+
         out_from_game(player.get_pos());
 
-        //find the winner
         if (p_game->size == 1){
             p_game->win = true;
         }
-
-        this->p_game->end_my_turn();
         return;
     }
-
-
 
     if (role() == "Assassin" && coins() < three) {
         throw runtime_error("Not enough money for this operation !");
@@ -157,8 +164,8 @@ void coup::Player::coup(Player &player) {
 
 
 
+   this->p_game->index++;
     out_from_game(player.get_pos());
-
     set_coins(-seven);
     this->set_Action(Normal_coup);
     player.set_Action(Out);
@@ -166,8 +173,6 @@ void coup::Player::coup(Player &player) {
     if (p_game->size == 1){
         p_game->win = true;
     }
-
-    this->p_game->end_my_turn();
 }
 
 
@@ -178,13 +183,7 @@ string coup::Player::get_name() {
 void coup::Player::out_from_game(int pos) {
     this->p_game->player.erase(this->p_game->player.begin() + pos);
     this->p_game->size--;
-//    this->p_game->index--;
-
-
-
-
-
-
+  //  this->p_game->index++;
 }
 
 int Player::get_Action() const {
