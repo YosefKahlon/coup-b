@@ -12,7 +12,6 @@ using namespace coup;
 
 
 coup::Game::Game() {
-
     this->min = false;
     this->start = false;
     this->win = false; // there is a winner
@@ -34,13 +33,14 @@ std::string coup::Game::winner() {
         throw runtime_error("Game is over !");
     }
 
-
     return turn();
 }
 
 std::string coup::Game::turn() {
     return this->player.at(index);
 }
+
+
 
 void Game::end_my_turn(bool forward) {
     if (forward) {

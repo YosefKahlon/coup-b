@@ -24,7 +24,7 @@ public:
 
     string role() const override;
 
-    void tax();
+
 
 
 

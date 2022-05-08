@@ -12,20 +12,24 @@ using namespace coup;
 
 Assassin::Assassin(Game &game, const string& name) : Player(game, name) {
 
-    if (game.size >= 6 ){
+    //Throw an exception if a new player trying to join the game when the game is full
+    const int  six = 6;
+    if (game.size >= six ){
         throw invalid_argument("Max player in the game is 6 !");
     }
 
 
+    //Throw an exception if a new player trying to join the game when the game is already started
     if(game.start){
         throw invalid_argument("Game is already start !");
     }
 
+
     this->player_name = name;
     game.player.push_back(name);
-    set_Action(Start);
-    set_pos(game.size);
     game.size++;
+
+    //The game has the minimum to start
     if (game.size == 2){
         game.min = true;
     }
@@ -42,12 +46,7 @@ string Assassin::role() const {
 
 
 
-void Assassin::tax() {
-    if (role() == "Duke") {
-        throw invalid_argument("Not your move !");
-    }
 
-}
 
 
 

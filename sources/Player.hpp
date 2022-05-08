@@ -86,7 +86,7 @@ namespace coup {
 
 
         virtual string role() const = 0; //need to be overridden
-        int find_p(string basicString);
+        int find_p(const string& basicString);
     };
 }
 
