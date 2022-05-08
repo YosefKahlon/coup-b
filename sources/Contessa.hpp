@@ -12,8 +12,7 @@
 namespace coup {
     class Contessa : public Player {
 
-    public:
-        string player_name;
+
 
 
     public:

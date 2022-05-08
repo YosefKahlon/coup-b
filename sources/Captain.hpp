@@ -13,8 +13,7 @@
 
      class Captain : public Player {
 
-     public:
-         string player_name;
+
 
 
      public:

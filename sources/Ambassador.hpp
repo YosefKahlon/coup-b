@@ -13,8 +13,6 @@ namespace coup {
 
     class Ambassador : public Player {
 
-    public:
-        string player_name;
 
     public:
         Ambassador(Game &game, const string& name);

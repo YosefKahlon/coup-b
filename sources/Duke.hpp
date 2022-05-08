@@ -13,8 +13,7 @@ namespace coup {
 
     class Duke : public Player {
 
-    public:
-        string player_name;
+
 
     public:
 
