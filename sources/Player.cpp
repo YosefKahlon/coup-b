@@ -14,6 +14,7 @@ coup::Player::Player(coup::Game &game, string name) {
     this->action = Start;
     this->p = nullptr;
     this->pos = 0;
+
 }
 
 /**
